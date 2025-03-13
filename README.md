@@ -13,3 +13,20 @@ QuickNote is a lightweight **Chrome extension** that allows you to **create, sav
 1. **Download or Clone** this repository:  
    ```sh
    git clone https://github.com/Adi-01/Quick-Note.git
+   ```
+2. Open **Google Chrome** and go to `chrome://extensions/`.  
+3. Enable **Developer Mode** (toggle in the top right corner).  
+4. Click on **Load unpacked** and select the `Quick-Note` folder.  
+
+## 🖥️ Viewing the Extension in Chrome  
+### **1️⃣Enable Developer Mode and Load the Extension**  
+1. Open **Google Chrome** and navigate to `chrome://extensions/`.  
+2. Enable **Developer Mode** (toggle in the top right corner).  
+3. Click on **Load unpacked** and select the `Quick-Note` folder.  
+
+### **2️⃣  Using QuickNote**  
+- Click on the **QuickNote** icon in the Chrome toolbar.  
+- Start writing your notes instantly. They will be **auto-saved**.  
+- Switch between light and dark mode using the **theme toggle**.  
+- Navigate between notes using the **back button**.  
+
