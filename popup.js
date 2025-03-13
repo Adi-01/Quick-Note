@@ -64,24 +64,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  addNoteBtn.addEventListener("click", function () {
-    let newTitle = prompt("Enter note title:");
-    if (!newTitle) return;
-
-    chrome.storage.sync.get("notes", function (data) {
-      let notes = data.notes || {};
-      if (notes[newTitle]) {
-        alert("A note with this title already exists!");
-        return;
-      }
-
-      notes[newTitle] = "";
-      chrome.storage.sync.set({ notes }, function () {
-        loadNotes();
-      });
-    });
-  });
-
   saveBtn.addEventListener("click", function () {
     if (!currentNote) return;
 
@@ -115,6 +97,41 @@ document.addEventListener("DOMContentLoaded", function () {
     const isDarkMode = darkModeToggle.checked;
     document.body.classList.toggle("dark-mode", isDarkMode);
     chrome.storage.sync.set({ darkMode: isDarkMode });
+  });
+
+  const addNoteModal = document.getElementById("addNoteModal");
+  const noteTitleInput = document.getElementById("noteTitleInput");
+  const confirmAddNote = document.getElementById("confirmAddNote");
+  const cancelAddNote = document.getElementById("cancelAddNote");
+
+  addNoteBtn.addEventListener("click", function () {
+    noteTitleInput.value = ""; // Clear input
+    addNoteModal.style.display = "flex"; // Show modal
+  });
+
+  // Handle adding note
+  confirmAddNote.addEventListener("click", function () {
+    let newTitle = noteTitleInput.value.trim();
+    if (!newTitle) return;
+
+    chrome.storage.sync.get("notes", function (data) {
+      let notes = data.notes || {};
+      if (notes[newTitle]) {
+        alert("A note with this title already exists!");
+        return;
+      }
+
+      notes[newTitle] = "";
+      chrome.storage.sync.set({ notes }, function () {
+        loadNotes();
+        addNoteModal.style.display = "none"; // Hide modal
+      });
+    });
+  });
+
+  // Handle cancel button
+  cancelAddNote.addEventListener("click", function () {
+    addNoteModal.style.display = "none";
   });
 
   loadNotes(); // Load titles when popup opens
