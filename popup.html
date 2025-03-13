@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quick Notes</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Dark Mode Toggle -->
+    <div class="toggle-container">
+      <label class="switch">
+        <input type="checkbox" id="darkModeToggle" />
+        <span class="slider round"></span>
+      </label>
+    </div>
+
+    <h1>Quick Notes</h1>
+
+    <!-- Notes List View -->
+    <div id="notesList">
+      <ul id="notesContainer"></ul>
+      <button id="addNoteBtn">+ Add Note</button>
+    </div>
+
+    <!-- Note Editor View (Hidden by Default) -->
+    <div id="noteEditor" style="display: none">
+      <button id="backBtn" class="back-btn">Back</button>
+      <h2 id="noteTitle"></h2>
+      <textarea id="noteArea" placeholder="Write your notes here..."></textarea>
+      <button id="saveBtn">Save</button>
+      <button id="deleteBtn">Delete</button>
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
