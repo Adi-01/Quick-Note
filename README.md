@@ -10,13 +10,13 @@ QuickNote is a lightweight **Chrome extension** that allows you to **create, sav
 
 ## 🔧 Installation Guide  
 ### **1️⃣ Load the Extension in Chrome**
-1. **Download or Clone** this repository:  
+1. **Download or Clone** this repository inside a folder name it whatever you want (quick-note for example):  
    ```sh
    git clone https://github.com/Adi-01/Quick-Note.git
    ```
 2. Open **Google Chrome** and go to `chrome://extensions/`.  
 3. Enable **Developer Mode** (toggle in the top right corner).  
-4. Click on **Load unpacked** and select the `Quick-Note` folder.  
+4. Click on **Load unpacked** and select the `quick-note` folder.  
 
 ## 🖥️ Viewing the Extension in Chrome  
 ### **1️⃣Enable Developer Mode and Load the Extension**  
